@@ -39,15 +39,7 @@ job('Exercise_5_solution') {
     publishers {
         archiveArtifacts('target/*.jar')
         archiveJunit 'target/surefire-reports/TEST-*.xml'
-        extendedEmail {
-            recipientList('me@halfempty.org')
-            defaultSubject('Oops')
-            defaultContent('Something broken')
-            contentType('text/html')
-            triggers {
-                failure()
-            }
-        }
+        mailer('me@example.com', true, true)
     }
 }
 
@@ -71,15 +63,7 @@ job('Exercise_6_solution') {
     publishers {
         archiveArtifacts('target/*.jar')
         archiveJunit 'target/surefire-reports/TEST-*.xml'
-        extendedEmail {
-            recipientList('me@halfempty.org')
-            defaultSubject('Oops')
-            defaultContent('Something broken')
-            contentType('text/html')
-            triggers {
-                failure()
-            }
-        }
+        mailer('me@example.com', true, true)
 
         publishHtml {
             report('/target/site/jacoco/') {
