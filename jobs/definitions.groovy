@@ -57,7 +57,7 @@ job('Exercise_6_solution') {
         scm('* * * * *')
     }
     steps {
-        maven('clean package')
+        maven('clean verify')
     }
 
     publishers {
