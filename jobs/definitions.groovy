@@ -2,7 +2,12 @@ def scmUrl = 'https://github.com/Pragmatists/testing-examples'
 
 job('Exercise_4_solution') {
     scm {
-        git(scmUrl)
+        git {
+            remote {
+                url(scmUrl)
+            }
+            branch('master')
+        }
     }
     steps {
         maven('clean package')
@@ -14,8 +19,14 @@ job('Exercise_4_solution') {
 }
 
 job('Exercise_5_solution') {
+
     scm {
-        git(scmUrl)
+        git {
+            remote {
+                url(scmUrl)
+            }
+            branch('master')
+        }
     }
 
     triggers {
@@ -42,7 +53,12 @@ job('Exercise_5_solution') {
 
 job('Exercise_6_solution') {
     scm {
-        git(scmUrl)
+        git {
+            remote {
+                url(scmUrl)
+            }
+            branch('master')
+        }
     }
 
     triggers {
