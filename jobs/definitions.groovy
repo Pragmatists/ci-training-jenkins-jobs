@@ -66,7 +66,7 @@ job('Exercise_6_solution') {
         mailer('me@example.com', true, true)
 
         publishHtml {
-            report('/target/site/jacoco/') {
+            report('target/site/jacoco/') {
                 reportName('Code coverage')
             }
         }
