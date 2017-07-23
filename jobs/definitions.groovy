@@ -83,11 +83,12 @@ job('Exercise_6_solution') {
 
         publishHtml {
             report('/target/site/jacoco/') {
-                reportName('Cucumber Tests')
+                reportName('Code coverage')
             }
         }
         cucumberReports {
-            jsonReportPath('target/cucumber.json')
+            jsonReportPath('target/')
+            fileIncludePattern('**/cucumber.json')
 
         }
 
